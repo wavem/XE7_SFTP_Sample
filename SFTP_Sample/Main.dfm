@@ -1,16 +1,34 @@
-object Form1: TForm1
+object FormMain: TFormMain
   Left = 0
   Top = 0
-  Caption = 'Form1'
-  ClientHeight = 299
-  ClientWidth = 635
+  BorderStyle = bsDialog
+  Caption = 'SFTP_Sample'
+  ClientHeight = 529
+  ClientWidth = 687
   Color = clBtnFace
+  DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
+  object ___pnBase: TPanel
+    Left = 0
+    Top = 0
+    Width = 687
+    Height = 529
+    Align = alClient
+    BevelOuter = bvNone
+    Color = 3947580
+    ParentBackground = False
+    TabOrder = 0
+    ExplicitLeft = 360
+    ExplicitTop = 288
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+  end
 end

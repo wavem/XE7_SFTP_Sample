@@ -114,7 +114,7 @@
     </PropertyGroup>
     <ItemGroup>
         <CppCompile Include="Main.cpp">
-            <Form>Form1</Form>
+            <Form>FormMain</Form>
             <FormType>dfm</FormType>
             <DependentOn>Main.h</DependentOn>
             <BuildOrder>2</BuildOrder>
