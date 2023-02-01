@@ -3,6 +3,8 @@
 #ifndef MainH
 #define MainH
 //---------------------------------------------------------------------------
+#include "Define.h"
+//---------------------------------------------------------------------------
 #include <System.Classes.hpp>
 #include <Vcl.Controls.hpp>
 #include <Vcl.StdCtrls.hpp>
