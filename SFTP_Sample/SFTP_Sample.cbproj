@@ -113,6 +113,9 @@
         <BCC_PCHName_Clang>SFTP_SamplePCH1.h</BCC_PCHName_Clang>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="ctgputtylib.cpp">
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Define.cpp">
             <DependentOn>Define.h</DependentOn>
             <BuildOrder>3</BuildOrder>
