@@ -12,8 +12,10 @@
 
 class TClassDemo
 {
+public:
   TTGPuttySFTP *PSFTP;
-  public:
+
+public:
 	bool DoVerifyHostKey(const char* host, const int port,
                          const char * fingerprint, const int verificationstatus,
                          bool &storehostkey);

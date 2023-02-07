@@ -32,9 +32,9 @@ object FormMain: TFormMain
     ExplicitWidth = 185
     ExplicitHeight = 41
     object memo: TAdvMemo
-      Left = 360
+      Left = 16
       Top = 256
-      Width = 393
+      Width = 737
       Height = 329
       Cursor = crIBeam
       ActiveLineSettings.ShowActiveLine = False
@@ -143,6 +143,15 @@ object FormMain: TFormMain
       UseStyler = True
       Version = '3.4.1.0'
       WordWrap = wwNone
+    end
+    object btn_Init: TButton
+      Left = 16
+      Top = 24
+      Width = 75
+      Height = 25
+      Caption = 'Init'
+      TabOrder = 1
+      OnClick = btn_InitClick
     end
   end
 end

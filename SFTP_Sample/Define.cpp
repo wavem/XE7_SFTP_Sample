@@ -41,9 +41,13 @@ bool TClassDemo::DoGetInput(char* linebuf, const int maxchars)
 }
 void TClassDemo::InitSFTP()
 {
+	// Common
+    UnicodeString tempStr = L"";
+
     PSFTP = new TTGPuttySFTP(true);
 
     printf("Using %s\n",PSFTP->GetLibVersion());
+
 
 	printf("Enter hostname (URL/IP):\n");
 	std::string host;
