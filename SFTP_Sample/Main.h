@@ -19,8 +19,10 @@ __published:	// IDE-managed Components
 	TPanel *___pnBase;
 	TAdvMemo *memo;
 	TButton *btn_Init;
+	TButton *btn_Connect;
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 	void __fastcall btn_InitClick(TObject *Sender);
+	void __fastcall btn_ConnectClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFormMain(TComponent* Owner);

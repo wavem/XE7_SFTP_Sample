@@ -64,6 +64,16 @@ void __fastcall TFormMain::btn_InitClick(TObject *Sender)
     m_pClassDemo->PSFTP->Password = pw;
     m_pClassDemo->PSFTP->Port = 22;
 
+    tempStr.sprintf(L"Host : %s", (UnicodeString)host.c_str());
+    PrintMsg(tempStr);
+    tempStr.sprintf(L"User : %s", (UnicodeString)user.c_str());
+    PrintMsg(tempStr);
+    tempStr.sprintf(L"PW : %s", (UnicodeString)pw.c_str());
+    PrintMsg(tempStr);
+    tempStr.sprintf(L"Port : %d", m_pClassDemo->PSFTP->Port);
+    PrintMsg(tempStr);
+
+
     // Set Event Functions
     m_pClassDemo->PSFTP->OnVerifyHostKey = m_pClassDemo->DoVerifyHostKey;
     m_pClassDemo->PSFTP->OnMessage = m_pClassDemo->DoMessage;
@@ -107,6 +117,25 @@ void __fastcall TFormMain::btn_InitClick(TObject *Sender)
 	PSFTP->OnGetInput = DoGetInput;
 #endif
 
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::btn_ConnectClick(TObject *Sender)
+{
+	// Common
+    UnicodeString tempStr = L"";
+
+    // Connect
+    m_pClassDemo->PSFTP->Connect();
+
+    tempStr.sprintf(L"Home Directory : %s", (UnicodeString)m_pClassDemo->PSFTP->HomeDir);
+    PrintMsg(tempStr);
+
+    tempStr.sprintf(L"Current Directory : %s", (UnicodeString)m_pClassDemo->PSFTP->WorkDir);
+    PrintMsg(tempStr);
+
+    //printf("Home Directory: %s\n",PSFTP->HomeDir);
+    //printf("Current Directory: %s\n",PSFTP->WorkDir);
 }
 //---------------------------------------------------------------------------
 

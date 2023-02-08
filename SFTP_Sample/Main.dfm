@@ -153,5 +153,14 @@ object FormMain: TFormMain
       TabOrder = 1
       OnClick = btn_InitClick
     end
+    object btn_Connect: TButton
+      Left = 16
+      Top = 55
+      Width = 75
+      Height = 25
+      Caption = 'Connect'
+      TabOrder = 2
+      OnClick = btn_ConnectClick
+    end
   end
 end
