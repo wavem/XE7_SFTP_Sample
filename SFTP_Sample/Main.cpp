@@ -56,7 +56,7 @@ void __fastcall TFormMain::btn_InitClick(TObject *Sender)
     PrintMsg(tempStr);
 
     // Input Host & User Info
-    std::string host = "10.123.1.35";
+    std::string host = "127.0.0.1";
     std::string user = "tcmsuser";
     std::string pw = "12345";
     m_pClassDemo->PSFTP->HostName = host;
@@ -72,7 +72,6 @@ void __fastcall TFormMain::btn_InitClick(TObject *Sender)
     PrintMsg(tempStr);
     tempStr.sprintf(L"Port : %d", m_pClassDemo->PSFTP->Port);
     PrintMsg(tempStr);
-
 
     // Set Event Functions
     m_pClassDemo->PSFTP->OnVerifyHostKey = m_pClassDemo->DoVerifyHostKey;
@@ -134,8 +133,11 @@ void __fastcall TFormMain::btn_ConnectClick(TObject *Sender)
     tempStr.sprintf(L"Current Directory : %s", (UnicodeString)m_pClassDemo->PSFTP->WorkDir);
     PrintMsg(tempStr);
 
-    //printf("Home Directory: %s\n",PSFTP->HomeDir);
-    //printf("Current Directory: %s\n",PSFTP->WorkDir);
+    //UploadTest.txt
+    //PSFTP->UploadFile("C:\\Tests\\Test.txt","Test.txt",false);
+    m_pClassDemo->PSFTP->UploadFile("UploadTest.txt", "UploadTest.txt", false);
+
+    PrintMsg(L"Uploaded");
 }
 //---------------------------------------------------------------------------
 
