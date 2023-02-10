@@ -162,5 +162,23 @@ object FormMain: TFormMain
       TabOrder = 2
       OnClick = btn_ConnectClick
     end
+    object btn_Disconnect: TButton
+      Left = 16
+      Top = 86
+      Width = 75
+      Height = 25
+      Caption = 'Disconnect'
+      TabOrder = 3
+      OnClick = btn_DisconnectClick
+    end
+    object btn_GetList: TButton
+      Left = 112
+      Top = 55
+      Width = 75
+      Height = 25
+      Caption = 'Get List'
+      TabOrder = 4
+      OnClick = btn_GetListClick
+    end
   end
 end

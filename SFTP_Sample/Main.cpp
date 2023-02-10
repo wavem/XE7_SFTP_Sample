@@ -138,6 +138,25 @@ void __fastcall TFormMain::btn_ConnectClick(TObject *Sender)
     m_pClassDemo->PSFTP->UploadFile("UploadTest.txt", "UploadTest.txt", false);
 
     PrintMsg(L"Uploaded");
+
+    //m_pClassDemo->PSFTP->
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::btn_DisconnectClick(TObject *Sender)
+{
+	m_pClassDemo->PSFTP->Disconnect();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::btn_GetListClick(TObject *Sender)
+{
+
+	//m_pClassDemo->PSFTP->
+	//m_pClassDemo->PSFTP->ListDir()
+
+    // Common
+    //UnicodeString tempStr = L"";
 }
 //---------------------------------------------------------------------------
 

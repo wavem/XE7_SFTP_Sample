@@ -3,10 +3,12 @@
 #pragma hdrstop
 
 #include "Define.h"
+#include "Main.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
 
+//TFormMain *FormMain;
 
 bool TClassDemo::DoVerifyHostKey(const char* host, const int port,
                                  const char * fingerprint, const int verificationstatus,
@@ -19,6 +21,10 @@ bool TClassDemo::DoVerifyHostKey(const char* host, const int port,
 void TClassDemo::DoMessage(const char* Msg, const bool isstderr)
 {
 	printf("%s",Msg);
+    // Common
+    UnicodeString tempStr = L"";
+    tempStr.sprintf(L"%s", (UnicodeString)Msg);
+    FormMain->PrintMsg(tempStr);
 }
 bool TClassDemo::DoProgress(const __int64 bytescopied, const bool isupload)
 {
