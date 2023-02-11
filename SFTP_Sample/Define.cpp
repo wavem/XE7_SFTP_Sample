@@ -33,9 +33,15 @@ bool TClassDemo::DoProgress(const __int64 bytescopied, const bool isupload)
 }
 bool TClassDemo::DoListing(const struct fxp_names* names)
 {
+	// Common
+    UnicodeString tempStr = L"";
+
 	for (int i = 0; i < names->nnames; i++)
 	{
+
 		printf("%40s  %10I64u\n",names->names[i].filename,names->names[i].attrs.size);
+        tempStr.sprintf(L"%s  :  %10I64u", (UnicodeString)names->names[i].filename, names->names[i].attrs.size);
+    	FormMain->PrintMsg(tempStr);
 	}
 	return true;
 }

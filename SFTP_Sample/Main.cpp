@@ -156,7 +156,36 @@ void __fastcall TFormMain::btn_GetListClick(TObject *Sender)
 	//m_pClassDemo->PSFTP->ListDir()
 
     // Common
-    //UnicodeString tempStr = L"";
+    UnicodeString tempStr = L"";
+
+    tempStr.sprintf(L"Get Home Dir : %s", (UnicodeString)m_pClassDemo->PSFTP->GetHomeDir());
+    PrintMsg(tempStr);
+
+    tempStr.sprintf(L"Get Work Dir : %s", (UnicodeString)m_pClassDemo->PSFTP->GetWorkDir());
+    PrintMsg(tempStr);
+
+    tempStr.sprintf(L"Work Dir : %s", (UnicodeString)m_pClassDemo->PSFTP->WorkDir);
+    PrintMsg(tempStr);
+
+    tempStr.sprintf(L"Home Dir : %s", (UnicodeString)m_pClassDemo->PSFTP->HomeDir);
+    PrintMsg(tempStr);
+
+
+    m_pClassDemo->PSFTP->ListDir(m_pClassDemo->PSFTP->WorkDir);
+    PrintMsg(L"----------------------------------------");
+
+    m_pClassDemo->PSFTP->ListDir(m_pClassDemo->PSFTP->HomeDir);
+
+    PrintMsg(L"=================================");
+    m_pClassDemo->PSFTP->ChangeDir("bin");
+
+
+    m_pClassDemo->PSFTP->ListDir(m_pClassDemo->PSFTP->WorkDir);
+    PrintMsg(L"----------------------------------------");
+
+    m_pClassDemo->PSFTP->ListDir(m_pClassDemo->PSFTP->HomeDir);
+
+
 }
 //---------------------------------------------------------------------------
 
