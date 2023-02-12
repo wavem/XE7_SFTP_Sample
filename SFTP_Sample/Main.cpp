@@ -185,6 +185,11 @@ void __fastcall TFormMain::btn_GetListClick(TObject *Sender)
 
     m_pClassDemo->PSFTP->ListDir(m_pClassDemo->PSFTP->HomeDir);
 
+    PrintMsg(L">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+    m_pClassDemo->PSFTP->ChangeDir("..");
+
+    m_pClassDemo->PSFTP->ListDir(m_pClassDemo->PSFTP->WorkDir);
+
 
 }
 //---------------------------------------------------------------------------
