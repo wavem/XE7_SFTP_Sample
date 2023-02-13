@@ -22,11 +22,13 @@ __published:	// IDE-managed Components
 	TButton *btn_Connect;
 	TButton *btn_Disconnect;
 	TButton *btn_GetList;
+	TButton *btn_Upload;
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 	void __fastcall btn_InitClick(TObject *Sender);
 	void __fastcall btn_ConnectClick(TObject *Sender);
 	void __fastcall btn_DisconnectClick(TObject *Sender);
 	void __fastcall btn_GetListClick(TObject *Sender);
+	void __fastcall btn_UploadClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFormMain(TComponent* Owner);

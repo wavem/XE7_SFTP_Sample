@@ -164,7 +164,7 @@ object FormMain: TFormMain
     end
     object btn_Disconnect: TButton
       Left = 16
-      Top = 86
+      Top = 117
       Width = 75
       Height = 25
       Caption = 'Disconnect'
@@ -179,6 +179,15 @@ object FormMain: TFormMain
       Caption = 'Get List'
       TabOrder = 4
       OnClick = btn_GetListClick
+    end
+    object btn_Upload: TButton
+      Left = 16
+      Top = 86
+      Width = 75
+      Height = 25
+      Caption = 'Upload'
+      TabOrder = 5
+      OnClick = btn_UploadClick
     end
   end
 end

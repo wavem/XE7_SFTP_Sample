@@ -28,6 +28,12 @@ void TClassDemo::DoMessage(const char* Msg, const bool isstderr)
 }
 bool TClassDemo::DoProgress(const __int64 bytescopied, const bool isupload)
 {
+	// Common
+    UnicodeString tempStr;
+
+    tempStr.sprintf(L"Progress: %I64u", bytescopied);
+    FormMain->PrintMsg(tempStr);
+
 	printf("Progress: %I64u\n", bytescopied);
 	return true;
 }

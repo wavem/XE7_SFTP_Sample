@@ -135,9 +135,7 @@ void __fastcall TFormMain::btn_ConnectClick(TObject *Sender)
 
     //UploadTest.txt
     //PSFTP->UploadFile("C:\\Tests\\Test.txt","Test.txt",false);
-    m_pClassDemo->PSFTP->UploadFile("UploadTest.txt", "UploadTest.txt", false);
-
-    PrintMsg(L"Uploaded");
+    
 
     //m_pClassDemo->PSFTP->
 }
@@ -191,6 +189,13 @@ void __fastcall TFormMain::btn_GetListClick(TObject *Sender)
     m_pClassDemo->PSFTP->ListDir(m_pClassDemo->PSFTP->WorkDir);
 
 
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::btn_UploadClick(TObject *Sender)
+{
+	m_pClassDemo->PSFTP->UploadFile("UploadTest.txt", "UploadTest.txt", false);
+    PrintMsg(L"Uploaded");
 }
 //---------------------------------------------------------------------------
 
