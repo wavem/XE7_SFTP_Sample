@@ -189,5 +189,32 @@ object FormMain: TFormMain
       TabOrder = 5
       OnClick = btn_UploadClick
     end
+    object Button1: TButton
+      Left = 112
+      Top = 86
+      Width = 75
+      Height = 25
+      Caption = 'Work Dir'
+      TabOrder = 6
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 112
+      Top = 117
+      Width = 75
+      Height = 25
+      Caption = 'Test'
+      TabOrder = 7
+      OnClick = Button2Click
+    end
+    object Button3: TButton
+      Left = 112
+      Top = 148
+      Width = 75
+      Height = 25
+      Caption = 'Send Msg'
+      TabOrder = 8
+      OnClick = Button3Click
+    end
   end
 end

@@ -56,9 +56,9 @@ void __fastcall TFormMain::btn_InitClick(TObject *Sender)
     PrintMsg(tempStr);
 
     // Input Host & User Info
-    std::string host = "127.0.0.1";
-    std::string user = "tcmsuser";
-    std::string pw = "12345";
+    std::string host = "10.123.1.229";
+    std::string user = "root";
+    std::string pw = "root";
     m_pClassDemo->PSFTP->HostName = host;
 	m_pClassDemo->PSFTP->UserName = user;
     m_pClassDemo->PSFTP->Password = pw;
@@ -156,26 +156,45 @@ void __fastcall TFormMain::btn_GetListClick(TObject *Sender)
     // Common
     UnicodeString tempStr = L"";
 
-    tempStr.sprintf(L"Get Home Dir : %s", (UnicodeString)m_pClassDemo->PSFTP->GetHomeDir());
-    PrintMsg(tempStr);
+    //tempStr.sprintf(L"Get Home Dir : %s", (UnicodeString)m_pClassDemo->PSFTP->GetHomeDir());
+    //PrintMsg(tempStr);
 
-    tempStr.sprintf(L"Get Work Dir : %s", (UnicodeString)m_pClassDemo->PSFTP->GetWorkDir());
-    PrintMsg(tempStr);
+    //tempStr.sprintf(L"Get Work Dir : %s", (UnicodeString)m_pClassDemo->PSFTP->GetWorkDir());
+    //PrintMsg(tempStr);
 
+    PrintMsg(L"----------------------------------------");
     tempStr.sprintf(L"Work Dir : %s", (UnicodeString)m_pClassDemo->PSFTP->WorkDir);
     PrintMsg(tempStr);
 
     tempStr.sprintf(L"Home Dir : %s", (UnicodeString)m_pClassDemo->PSFTP->HomeDir);
     PrintMsg(tempStr);
-
+    PrintMsg(L"----------------------------------------");
 
     m_pClassDemo->PSFTP->ListDir(m_pClassDemo->PSFTP->WorkDir);
     PrintMsg(L"----------------------------------------");
 
-    m_pClassDemo->PSFTP->ListDir(m_pClassDemo->PSFTP->HomeDir);
+
+
+    m_pClassDemo->PSFTP->ChangeDir("..");
+    PrintMsg(L"Dir Changed : ..");
+    PrintMsg(L"----------------------------------------");
+
+    m_pClassDemo->PSFTP->ListDir(m_pClassDemo->PSFTP->WorkDir);
+    PrintMsg(L"----------------------------------------");
+
+
+
+    m_pClassDemo->PSFTP->ChangeDir("rotem");
+    PrintMsg(L"Dir Changed : rotem");
+    PrintMsg(L"----------------------------------------");
+
+    m_pClassDemo->PSFTP->ListDir(m_pClassDemo->PSFTP->WorkDir);
+    PrintMsg(L"----------------------------------------");
+
+    return;
 
     PrintMsg(L"=================================");
-    m_pClassDemo->PSFTP->ChangeDir("bin");
+    //m_pClassDemo->PSFTP->ChangeDir("bin");
 
 
     m_pClassDemo->PSFTP->ListDir(m_pClassDemo->PSFTP->WorkDir);
@@ -194,8 +213,50 @@ void __fastcall TFormMain::btn_GetListClick(TObject *Sender)
 
 void __fastcall TFormMain::btn_UploadClick(TObject *Sender)
 {
-	m_pClassDemo->PSFTP->UploadFile("UploadTest.txt", "UploadTest.txt", false);
+	//m_pClassDemo->PSFTP->UploadFile("20230303_TEST.txt", "20230303_TEST.txt", false);
+    m_pClassDemo->PSFTP->UploadFile("SGJ151_TIMSnew", "SGJ151_TIMSnew", false);
     PrintMsg(L"Uploaded");
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::Button1Click(TObject *Sender)
+{
+	PrintMsg(L"Search Current Work Directory");
+	m_pClassDemo->PSFTP->ListDir(m_pClassDemo->PSFTP->WorkDir);
+    PrintMsg(L"----------------------------------------");
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::Button2Click(TObject *Sender)
+{
+	// Common
+    UnicodeString tempStr = L"";
+
+	int t_ParamCount = ParamCount();
+    tempStr.sprintf(L"Parameter count : %d", t_ParamCount);
+	PrintMsg(tempStr);
+
+    tempStr = ParamStr(0);
+    PrintMsg(tempStr);
+
+    tempStr = ParamStr(1);
+    PrintMsg(tempStr);
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::Button3Click(TObject *Sender)
+{
+	HWND pHwnd = FindWindow(NULL, L"JRL SFTP");
+    if(pHwnd) {
+        PrintMsg(L"Got it");
+    } else {
+        PrintMsg(L"There is no JRL SFTP.exe");
+    }
+
+	UnicodeString t_Str = L"Hiroo";
+    //SendMessage(pHwnd, 14759, (unsigned int)&t_Str, 0x10);
+    SendMessage(pHwnd, 14759, 0x13, 0x10);
 }
 //---------------------------------------------------------------------------
 
